@@ -109,7 +109,7 @@ go run cmd/bot/main.go
   
   ### Bot Interface Preview
   <p align="left">
-    <img src="assets/bot.png" alt="Telegram Bot Interface" width="500"/>
+    <img src="assets/bot.png?v=2" alt="Telegram Bot Interface" width="500"/>
   </p>
   <p align="left"><i>Figure 1: The interactive menu with 3x2 inline keyboard.</i></p>
 
