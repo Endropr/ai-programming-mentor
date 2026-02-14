@@ -17,7 +17,9 @@ func NewPostgresRepo(conn *pgx.Conn) *PostgresRepo {
 
 // SaveMessage автоматически выполнит INSERT, который ты до этого делал вручную
 func (r *PostgresRepo) SaveMessage(ctx context.Context, msg domain.Message) error {
-	query := `INSERT INTO messages (user_id, role, content) VALUES ($1, $2, $3)`
-	_, err := r.conn.Exec(ctx, query, msg.UserID, msg.Role, msg.Content)
+	query := `INSERT INTO messages (user_id, role, content, selected_language) VALUES ($1, $2, $3, $4)`
+	
+	// Передаем значение из структуры domain.Message в запрос
+	_, err := r.conn.Exec(ctx, query, msg.UserID, msg.Role, msg.Content, msg.SelectedLanguage)
 	return err
 }
